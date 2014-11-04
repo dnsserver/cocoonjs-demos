@@ -96,8 +96,8 @@ var actor = null;
 
               CAAT.Dude.superclass.paint.call(this,director,time);
             },
-            slowAnimation: function(n){
-              this.backgroundImage.changeFPS = this.backgroundImage.animationsMap[this.tmp_anim].time * n;
+            setAnimationSpeed: function(n){
+              this.setChangeFPS(n);
             },
             startAnimation: function(){
               this.backgroundImage.changeFPS = this.backgroundImage.animationsMap[this.tmp_anim].time;
@@ -163,7 +163,7 @@ var actor = null;
                 this.setLocation(this.tmp_x,this.tmp_y);
               }else{
                 if(this.y< h - actor.height){
-                  this.slowAnimation(10000);
+                  this.setAnimationSpeed(10000);
                 }else{
                   this.playAnimation("stand");
                 }
